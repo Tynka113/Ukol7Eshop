@@ -1,0 +1,5 @@
+Náhrdelník      GLNCN-0001      zlato   585/1000        žluto-bílá      bez kamene      2,35    7000    0001.jpg       obr/     True    Náhrdelník ze žluto-bílého zlata        popis   5       45
+Náušnice        GLEYB-0002      zlato   585/1000        žlutá   bílý zirkon     1       3100    0002.jpg        obr/   True     Zlaté náušnice se zirkony       popis2  3       puzeta
+Přívěsek        GLPRO-0003      zlato   585/1000        růžová  bílý opál       0,5     1550    0003.jpg        obr/   True     Pžívěsek z růžového zlata s bílým opálem        4       4       klasické
+Náramek GLBCB-0004      zlato   585/1000        žluto-bílá      bílý zirkon     3       10000   0004.jpg    obr/    True   Náramek ze žluto-bílého zlata se zirkony popis4  1       19
+Prsten  GMRYN-0005      zlato   585/1000        žlutá   bez kamene      2,5     7700    0005.jpg    obr/    True    Zlatý pánský pečetní prsten     popis5  2       66
