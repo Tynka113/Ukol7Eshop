@@ -10,22 +10,8 @@ namespace Ukol7Eshop
     {
         public int DelkaNaramku;
 
-        public Naramek(string druhSperku, string sku, string kov, string ryzostKovu, string barvaKovu, string kamen, double hmotnostGramy, double cena, string obrazek, string cestaKObrazku, bool jeSkladem, string nazev, string popis, int pocetKs, int delkaNaramku)
+        public Naramek(string sku, string kov, string ryzostKovu, string barvaKovu, string kamen, double hmotnostGramy, double cena, string obrazek, string cestaKObrazku, bool jeSkladem, string nazev, string popis, int pocetKs, int delkaNaramku) : base("Naramek", sku, kov, ryzostKovu, barvaKovu, kamen, hmotnostGramy, cena, obrazek, cestaKObrazku, jeSkladem, nazev, popis, pocetKs)
         {
-            DruhSperku = druhSperku;
-            Sku = sku;
-            Kov = kov;
-            RyzostKovu = ryzostKovu;
-            BarvaKovu = barvaKovu;
-            Kamen = kamen;
-            HmotnostGramy = hmotnostGramy;
-            Cena = cena;
-            Obrazek = obrazek;
-            CestaKObrazku = cestaKObrazku;
-            JeSkladem = jeSkladem;
-            Nazev = nazev;
-            Popis = popis;
-            PocetKs = pocetKs;
             DelkaNaramku = delkaNaramku;
         }
     }

@@ -199,35 +199,35 @@ public class Program
                                             case 1:
                                                 Console.Write("Zadej délku náhrdelníku [cm]: ");
                                                 int delkaNahrdelniku = Convert.ToInt32(Console.ReadLine());
-                                                Nahrdelnik nahrdelnik = new Nahrdelnik("Náhrdelník", sku, kov, ryzostKovu, barvaKovu, kamen, hmotnostGramy, cena, obrazek, cestaKObrazku, jeSkladem, nazev, popis, pocetKs, delkaNahrdelniku);
+                                                Nahrdelnik nahrdelnik = new Nahrdelnik(sku, kov, ryzostKovu, barvaKovu, kamen, hmotnostGramy, cena, obrazek, cestaKObrazku, jeSkladem, nazev, popis, pocetKs, delkaNahrdelniku);
                                                 polozkySkladu.Add(nahrdelnik);
                                                 Console.WriteLine("Položka přidána");
                                                 break;
                                             case 2:
                                                 Console.Write("Zadej délku náramku [cm]: ");
                                                 int delkaNaramku = Convert.ToInt32(Console.ReadLine());
-                                                Naramek naramek = new Naramek("Náramek", sku, kov, ryzostKovu, barvaKovu, kamen, hmotnostGramy, cena, obrazek, cestaKObrazku, jeSkladem, nazev, popis, pocetKs, delkaNaramku);
+                                                Naramek naramek = new Naramek(sku, kov, ryzostKovu, barvaKovu, kamen, hmotnostGramy, cena, obrazek, cestaKObrazku, jeSkladem, nazev, popis, pocetKs, delkaNaramku);
                                                 polozkySkladu.Add(naramek);
                                                 Console.WriteLine("Položka přidána");
                                                 break;
                                             case 3:
                                                 Console.Write("Zadej velikost prstenu [mm]: ");
                                                 int velikostPrstenu = Convert.ToInt32(Console.ReadLine());
-                                                Prsten prsten = new Prsten("Prsten", sku, kov, ryzostKovu, barvaKovu, kamen, hmotnostGramy, cena, obrazek, cestaKObrazku, jeSkladem, nazev, popis, pocetKs, velikostPrstenu);
+                                                Prsten prsten = new Prsten(sku, kov, ryzostKovu, barvaKovu, kamen, hmotnostGramy, cena, obrazek, cestaKObrazku, jeSkladem, nazev, popis, pocetKs, velikostPrstenu);
                                                 polozkySkladu.Add(prsten);
                                                 Console.WriteLine("Položka přidána");
                                                 break;
                                             case 4:
                                                 Console.Write("Zadej druh zapínání náušnic: ");
                                                 string druhZapinani = Console.ReadLine();
-                                                Nausnice nausnice = new Nausnice("Náušnice", sku, kov, ryzostKovu, barvaKovu, kamen, hmotnostGramy, cena, obrazek, cestaKObrazku, jeSkladem, nazev, popis, pocetKs, druhZapinani);
+                                                Nausnice nausnice = new Nausnice(sku, kov, ryzostKovu, barvaKovu, kamen, hmotnostGramy, cena, obrazek, cestaKObrazku, jeSkladem, nazev, popis, pocetKs, druhZapinani);
                                                 polozkySkladu.Add(nausnice);
                                                 Console.WriteLine("Položka přidána");
                                                 break;
                                             case 5:
                                                 Console.Write("Zadej typ přívěsku: ");
                                                 string typPrivesku = Console.ReadLine();
-                                                Privesek privesek = new Privesek("Přívěsek", sku, kov, ryzostKovu, barvaKovu, kamen, hmotnostGramy, cena, obrazek, cestaKObrazku, jeSkladem, nazev, popis, pocetKs, typPrivesku);
+                                                Privesek privesek = new Privesek(sku, kov, ryzostKovu, barvaKovu, kamen, hmotnostGramy, cena, obrazek, cestaKObrazku, jeSkladem, nazev, popis, pocetKs, typPrivesku);
                                                 polozkySkladu.Add(privesek);
                                                 Console.WriteLine("Položka přidána");
                                                 break;
@@ -239,6 +239,7 @@ public class Program
                                 }
                             case 2: // Uložení do souboru
                                 {
+                                    Console.WriteLine("Zatím nefunguji úplně správně");
                                     string cesta1Ulozeno = "C:\\Users\\macha\\OneDrive\\C#2\\Domácí úkoly\\Ukol7Eshop\\ulozeno1.txt";
                                     //string cestaDatabaze = "C:\\Users\\macha\\OneDrive\\C#2\\Domácí úkoly\\Ukol7Eshop\\databaze.txt";
                                     StringBuilder builder = new StringBuilder();
@@ -363,7 +364,7 @@ public class Program
                                         {
                                             hodnotaPP = hodnotaPP + (item.Cena * item.PocetKs);
                                         }
-                                        Console.WriteLine("Hodnota prodaných položek: " + hodnotaPP);
+                                        Console.WriteLine("Hodnota prodaných položek [Kč]: " + hodnotaPP);
                                     }
                                     else
                                     {
@@ -378,9 +379,9 @@ public class Program
                                     double hodnotaSkladu = 0;
                                     foreach (var item in polozkySkladu)
                                     {
-                                        hodnotaSkladu = hodnotaSkladu + item.Cena * item.PocetKs;
+                                        hodnotaSkladu = hodnotaSkladu + (item.Cena * item.PocetKs);
                                     }
-                                    Console.WriteLine("Hodnota skladu: " + hodnotaSkladu);
+                                    Console.WriteLine("Hodnota skladu [Kč]: " + hodnotaSkladu);
                                     break;
                                 }
 
@@ -425,8 +426,7 @@ public class Program
                                     {
                                         if (string.Equals(item.Sku, sku, StringComparison.OrdinalIgnoreCase))
                                         {
-                                            Sperk prodano = item;
-                                            prodano.PocetKs = pocet;
+                                            Sperk prodano = new Sperk(item.DruhSperku, item.Sku, item.Kov, item.RyzostKovu, item.BarvaKovu, item.Kamen, item.HmotnostGramy, item.Cena, item.Obrazek, item.CestaKObrazku, item.JeSkladem, item.Nazev, item.Popis, pocet);
 
                                             if (item.PocetKs > pocet)
                                             {

@@ -23,6 +23,24 @@ namespace Ukol7Eshop
         public string Popis;
         public int PocetKs;
 
+        public Sperk(string druhSperku, string sku, string kov, string ryzostKovu, string barvaKovu, string kamen, double hmotnostGramy, double cena, string obrazek, string cestaKObrazku, bool jeSkladem, string nazev, string popis, int pocetKs)
+        {
+            DruhSperku = druhSperku;
+            Sku = sku;
+            Kov = kov;
+            RyzostKovu = ryzostKovu;
+            BarvaKovu = barvaKovu;
+            Kamen = kamen;
+            HmotnostGramy = hmotnostGramy;
+            Cena = cena;
+            Obrazek = obrazek;
+            CestaKObrazku = cestaKObrazku;
+            JeSkladem = jeSkladem;
+            Nazev = nazev;
+            Popis = popis;
+            PocetKs = pocetKs;
+        }
+
         public string Naskladni(int pocet)
         {
             PocetKs = PocetKs + pocet;
